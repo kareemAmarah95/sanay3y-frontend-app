@@ -1,6 +1,6 @@
 import React from "react";
-
-const register = () => {
+import "./Register.css";
+const Register = () => {
   return (
     <>
       <div className="flex bg-white min-h-full flex-col justify-center items-center h-100dvh px-6 py-12 lg:px-8">
@@ -12,15 +12,17 @@ const register = () => {
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Your Company"
               />
-              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white text-black">
+              {/* text-white */}
+              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight  text-black">
                 Sign up to your account
               </h2>
             </div>
             <form className="space-y-6" action="#" method="POST">
               <div>
+                {/* text-white */}
                 <label
                   htmlFor="firstname"
-                  className="block text-sm font-medium leading-6 text-white text-black text-left"
+                  className="block text-sm font-medium leading-6  text-black text-left"
                 >
                   First-Name
                 </label>
@@ -37,9 +39,10 @@ const register = () => {
               </div>
 
               <div>
+                {/* text-white */}
                 <label
                   htmlFor="lastname"
-                  className="block text-sm font-medium leading-6 text-white text-black text-left"
+                  className="block text-sm font-medium leading-6  text-black text-left"
                 >
                   Last-Name
                 </label>
@@ -56,9 +59,10 @@ const register = () => {
               </div>
 
               <div>
+                {/* text-white */}
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-white text-black text-left"
+                  className="block text-sm font-medium leading-6  text-black text-left"
                 >
                   Email
                 </label>
@@ -76,9 +80,10 @@ const register = () => {
 
               <div>
                 <div className="flex items-center justify-between">
+                  {/* text-white */}
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-white text-black"
+                    className="block text-sm font-medium leading-6  text-black"
                   >
                     Password
                   </label>
@@ -97,9 +102,10 @@ const register = () => {
 
               <div>
                 <div className="flex items-center justify-between">
+                  {/* text-white */}
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-white text-black"
+                    className="block text-sm font-medium leading-6  text-black"
                   >
                     Confirm-Password
                   </label>
@@ -132,4 +138,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

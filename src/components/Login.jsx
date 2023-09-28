@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-const login = () => {
+const Login = () => {
   return (
     <>
       {/* bg-gray-950 */}
@@ -13,15 +13,17 @@ const login = () => {
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Your Company"
               />
-              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white text-black">
+              {/* text-white */}
+              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight  text-black">
                 Sign in to your account
               </h2>
             </div>
             <form className="space-y-6" action="#" method="POST">
               <div>
+                {/* text-white */}
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-white text-black text-left"
+                  className="block text-sm font-medium leading-6  text-black text-left"
                 >
                   Email address
                 </label>
@@ -39,9 +41,10 @@ const login = () => {
 
               <div>
                 <div className="flex items-center justify-between">
+                  {/* text-white */}
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-white text-black"
+                    className="block text-sm font-medium leading-6  text-black"
                   >
                     Password
                   </label>
@@ -67,9 +70,10 @@ const login = () => {
               </div>
 
               <div>
+                {/* text-white */}
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 text-white"
                 >
                   Sign in
                 </button>
@@ -92,4 +96,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
