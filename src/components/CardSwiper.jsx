@@ -2,7 +2,7 @@ import React from "react";
 import image from "../images/images.jpeg";
 const CardSwiper = () => {
   return (
-    <div className="grid grid-rows-4 grid-flow-col gap-4">
+    <div className="flex w-[90%]">
       <div>
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
           <div className="md:flex flex-col">

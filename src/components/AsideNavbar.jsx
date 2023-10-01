@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import CardSwiper from "./CardSwiper";
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+
+// import Swiper from "swiper";
+// import { Navigation, Pagination } from "swiper/modules";
 // import Swiper and modules styles
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/autoplay";
+// import "swiper/css/effect-fade";
+// import "swiper/css/zoom";
+
+import "./AsideNavbar.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 const AsideNavbar = () => {
   const [display, setDisplay] = useState("none");
   const [displayAsideNav, setDisplayAsideNav] = useState("block");
   const [showAsideNavbar, setShowAsideNavbar] = useState(true);
+
   const showDropdownList = () => {
     if (display === "none") {
       setDisplay("block");
@@ -31,10 +42,41 @@ const AsideNavbar = () => {
   };
 
   // init Swiper:
-  const swiper = new Swiper(".swiper", {
-    // configure Swiper to use modules
-    modules: [Navigation, Pagination],
-  });
+  // const swiper = new Swiper(".swiper", {
+  //   // configure Swiper to use modules
+  //   modules: [Navigation, Pagination],
+  //   speed: 400,
+  //   spaceBetween: 100,
+  //   a11y: {
+  //     prevSlideMessage: "Previous slide",
+  //     nextSlideMessage: "Next slide",
+  //   },
+  //   allowSlideNext: true,
+  //   allowSlidePrev: true,
+  //   allowTouchMove: true,
+  //   autoplay: true,
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   loop: true,
+  //   /*autoplay: true,*/
+  //   autoplay: {
+  //     delay: 6000,
+  //     disableOnInteraction: false,
+  //   },
+  //   speed: 1000,
+  //   autoHeight: true,
+  //   spaceBetween: 30,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   pagination: {
+  //     el: ".swiper-pagination-t0",
+  //     type: "bullets",
+  //     clickable: true,
+  //   },
+  // });
+
   return (
     <>
       <div className="bg-white">
@@ -59,7 +101,8 @@ const AsideNavbar = () => {
           From: "opacity-100"
           To: "opacity-0"
        */}
-            <div className="fixed inset-0 bg-black bg-opacity-25"></div>
+            {/* inset-0 bg-black bg-opacity-25 */}
+            <div className="fixed "></div>
 
             <div className="fixed inset-0 z-40 flex">
               {/*  
@@ -676,9 +719,10 @@ const AsideNavbar = () => {
                 Products
               </h2>
 
-              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+              {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4"> */}
+              <div className="flex justify-between">
                 {/*  Filters  */}
-                <form className="hidden lg:block">
+                <form className="hidden lg:block  w-1/4">
                   <h3 className="sr-only">Categories</h3>
                   <ul
                     role="list"
@@ -1090,21 +1134,69 @@ const AsideNavbar = () => {
                 </form>
 
                 {/* Cards */}
-                {/* <div class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                {/* <div className="swiper w-3/4">
+                  <div className="swiper-wrapper">
+                    <div className="swiper-slide">
                       <CardSwiper />
                     </div>
-                    <div class="swiper-slide">
+                    <div className="swiper-slide">
                       <CardSwiper />
                     </div>
-                    <div class="swiper-slide">
+                    <div className="swiper-slide">
                       <CardSwiper />
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div className="swiper-slide">
+                      <CardSwiper />
+                    </div>
+                    <div className="swiper-slide">
+                      <CardSwiper />
+                    </div>
+                    <div className="swiper-slide">
+                      <CardSwiper />
+                    </div>
+
+                    <div className="swiper-button-prev"></div>
+
+                    <div className="swiper-button-next"></div>
+                    <div className="swiper-scrollbar"></div>
+                    <div className="swiper-pagination"></div>
                   </div>
                 </div> */}
+
+                <Swiper
+                  className="w-3/4"
+                  // install Swiper modules
+                  modules={[Navigation, Pagination, Scrollbar, A11y]}
+                  spaceBetween={50}
+                  slidesPerView={3}
+                  navigation
+                  pagination={{ clickable: true }}
+                  scrollbar={{ draggable: true }}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  onSlideChange={() => console.log("slide change")}
+                >
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <CardSwiper />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </section>
           </main>
