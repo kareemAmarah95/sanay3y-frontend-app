@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import CardSwiper from "./CardSwiper";
-
+import "./CardSwiper.css";
 // import Swiper from "swiper";
 // import { Navigation, Pagination } from "swiper/modules";
 // import Swiper and modules styles
@@ -31,9 +31,9 @@ const AsideNavbar = () => {
 
   const hideAsideNavbar = () => {
     if (displayAsideNav === "block") {
-      setDisplay("none");
+      setDisplayAsideNav("none");
     } else {
-      setDisplay("block");
+      setDisplayAsideNav("block");
     }
   };
 
@@ -104,7 +104,10 @@ const AsideNavbar = () => {
             {/* inset-0 bg-black bg-opacity-25 */}
             <div className="fixed "></div>
 
-            <div className="fixed inset-0 z-40 flex">
+            <div
+              className="fixed inset-0 z-40 flex"
+              style={{ display: displayAsideNav }}
+            >
               {/*  
           Off-canvas menu, show/hide based on off-canvas menu state.
 
@@ -118,7 +121,7 @@ const AsideNavbar = () => {
 
               <div
                 className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl"
-                // style={{ display: display }}
+                style={{ display: displayAsideNav }}
                 // style={display === "block" ? "none" : "block"}
               >
                 <div className="flex items-center justify-between px-4">
@@ -126,7 +129,7 @@ const AsideNavbar = () => {
                   <button
                     type="button"
                     className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
-                    onClick={showDropdownList}
+                    onClick={hideAsideNavbar}
                   >
                     <span className="sr-only">Close menu</span>
                     <svg
@@ -1163,40 +1166,173 @@ const AsideNavbar = () => {
                   </div>
                 </div> */}
 
-                <Swiper
-                  className="w-3/4"
-                  // install Swiper modules
-                  modules={[Navigation, Pagination, Scrollbar, A11y]}
-                  spaceBetween={50}
-                  slidesPerView={3}
-                  navigation
-                  pagination={{ clickable: true }}
-                  scrollbar={{ draggable: true }}
-                  onSwiper={(swiper) => console.log(swiper)}
-                  onSlideChange={() => console.log("slide change")}
-                >
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <CardSwiper />
-                  </SwiperSlide>
-                </Swiper>
+                <div className="flex-col w-3/4 text-left">
+                  {/* Category and section Sebaka*/}
+
+                  <div>
+                    <div className="flex category-header items-center cursor-pointer">
+                      <div className="icon-holder me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+
+                      <h1>Fany Sebaka</h1>
+                    </div>
+                    <Swiper
+                      // install Swiper modules
+                      modules={[Navigation, Pagination, Scrollbar, A11y]}
+                      spaceBetween={50}
+                      slidesPerView={3}
+                      navigation
+                      pagination={{ clickable: true }}
+                      scrollbar={{ draggable: true }}
+                      onSwiper={(swiper) => console.log(swiper)}
+                      onSlideChange={() => console.log("slide change")}
+                    >
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+                  {/* Category and section */}
+                  <div>
+                    <div className="flex category-header mt-8 items-center cursor-pointer">
+                      <div className="icon-holder me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+
+                      <h1>Fany Kahraba</h1>
+                    </div>
+                    <Swiper
+                      // install Swiper modules
+                      modules={[Navigation, Pagination, Scrollbar, A11y]}
+                      spaceBetween={50}
+                      slidesPerView={3}
+                      navigation
+                      pagination={{ clickable: true }}
+                      scrollbar={{ draggable: true }}
+                      onSwiper={(swiper) => console.log(swiper)}
+                      onSlideChange={() => console.log("slide change")}
+                    >
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+
+                  {/* Category and section Takyeefat*/}
+
+                  <div>
+                    <div className="flex category-header mt-8 items-center cursor-pointer">
+                      <div className="icon-holder me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+
+                      <h1>Fany Takyeefat</h1>
+                    </div>
+                    <Swiper
+                      // install Swiper modules
+                      modules={[Navigation, Pagination, Scrollbar, A11y]}
+                      spaceBetween={50}
+                      slidesPerView={3}
+                      navigation
+                      pagination={{ clickable: true }}
+                      scrollbar={{ draggable: true }}
+                      onSwiper={(swiper) => console.log(swiper)}
+                      onSlideChange={() => console.log("slide change")}
+                    >
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                      <SwiperSlide className="">
+                        <CardSwiper />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+                </div>
               </div>
             </section>
           </main>

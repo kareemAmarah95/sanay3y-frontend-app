@@ -1,8 +1,10 @@
 import React from "react";
 import image from "../images/images.jpeg";
+import "./CardSwiper.css";
+
 const CardSwiper = () => {
   return (
-    <div className="flex w-[90%]">
+    <div className="flex w-[90%] ">
       <div>
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
           <div className="md:flex flex-col">
@@ -13,21 +15,27 @@ const CardSwiper = () => {
                 alt="Modern building architecture"
               />
             </div>
-            <div className="p-4">
-              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                Company retreats
+            {/* details name, description , rating , phone-number */}
+            <div className="text-left p-4">
+              <div>
+                <span>Name : </span>
+                <span>John Doe</span>
               </div>
-              <a
-                href="#"
-                className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-              >
-                Incredible accommodation for your team
-              </a>
-              <p className="mt-2 text-slate-500">
-                Looking to take your team away on a retreat to enjoy awesome
-                food and take in some sunshine? We have a list of places to do
-                just that.
-              </p>
+              <div>
+                <span>Description : </span>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, sit!
+                </span>
+              </div>
+              <div>
+                <span>Rating : </span>
+                <span>⭐​⭐​⭐​⭐​</span>
+              </div>
+              <div>
+                <span>Phone Number : </span>
+                <span>01053786357</span>
+              </div>
             </div>
           </div>
         </div>
