@@ -2,7 +2,7 @@ import "./App.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
-// hello world
+
 function App() {
   return (
     <div className="App">
