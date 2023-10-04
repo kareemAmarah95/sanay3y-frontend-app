@@ -721,11 +721,12 @@ const AsideNavbar = () => {
               <h2 id="products-heading" className="sr-only">
                 Products
               </h2>
-
+              {/* flex justify-between */}
               {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4"> */}
-              <div className="flex justify-between">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4 adjust-ui-col">
                 {/*  Filters  */}
-                <form className="hidden lg:block  w-1/4">
+                {/* w-1/4 */}
+                <form className="hidden lg:block  ">
                   <h3 className="sr-only">Categories</h3>
                   <ul
                     role="list"
@@ -1165,8 +1166,8 @@ const AsideNavbar = () => {
                     <div className="swiper-pagination"></div>
                   </div>
                 </div> */}
-
-                <div className="flex-col w-3/4 text-left">
+                {/* w-3/4 */}
+                <div className="flex-col col-span-3 text-left">
                   {/* Category and section Sebaka*/}
 
                   <div>
@@ -1282,7 +1283,7 @@ const AsideNavbar = () => {
                   <div>
                     <div className="flex category-header mt-8 items-center cursor-pointer">
                       <div className="icon-holder me-3">
-                        <svg
+                        {/* <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
@@ -1291,6 +1292,19 @@ const AsideNavbar = () => {
                           <path
                             fill-rule="evenodd"
                             d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg> */}
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
                             clip-rule="evenodd"
                           />
                         </svg>
