@@ -1,6 +1,33 @@
-import React from "react";
-import "./Register.css";
+import {React,useState} from "react";
+import axios from "axios"
+
+
+
+
+
+
 const Register = () => {
+  const [firstname,setFirstName ]=useState("")
+  const [lastname, setLastName]=useState("")
+  const [email, setEmail]=useState("")
+  const [password, setPassword]=useState("")
+  
+  const handleSubmit =async (event)=>{
+    event.preventDefault()
+    try {
+      await axios.post('/Register',{
+        firstname,
+        lastname,
+        email,
+        password
+      });
+      alert('Registeration Successfull !')
+    } catch (error) {
+      alert('Registeration Failed !')
+    }
+    
+  }
+
   return (
     <>
       <div className="flex bg-white min-h-full flex-col justify-center items-center h-100dvh px-6 py-12 lg:px-8">
@@ -12,14 +39,12 @@ const Register = () => {
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Your Company"
               />
-              {/* text-white */}
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight  text-black">
                 Sign up to your account
               </h2>
             </div>
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                {/* text-white */}
                 <label
                   htmlFor="firstname"
                   className="block text-sm font-medium leading-6  text-black text-left"
@@ -30,7 +55,10 @@ const Register = () => {
                   <input
                     id="firstname"
                     name="firstname"
+                    value={firstname}
                     type="text"
+                    onChange={(ev)=>{setFirstName(ev.target.value)}}
+
                     autocomplete="firstname"
                     required
                     className="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -39,7 +67,6 @@ const Register = () => {
               </div>
 
               <div>
-                {/* text-white */}
                 <label
                   htmlFor="lastname"
                   className="block text-sm font-medium leading-6  text-black text-left"
@@ -50,7 +77,9 @@ const Register = () => {
                   <input
                     id="lastname"
                     name="lastname"
+                    value={lastname}
                     type="text"
+                    onChange={(ev)=>{setLastName(ev.target.value)}}
                     autocomplete="lastname"
                     required
                     className="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -59,7 +88,6 @@ const Register = () => {
               </div>
 
               <div>
-                {/* text-white */}
                 <label
                   htmlFor="email"
                   className="block text-sm font-medium leading-6  text-black text-left"
@@ -70,7 +98,9 @@ const Register = () => {
                   <input
                     id="email"
                     name="email"
+                    value={email}
                     type="email"
+                    onChange={(ev)=>{setEmail(ev.target.value)}}
                     autocomplete="email"
                     required
                     className="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -80,7 +110,6 @@ const Register = () => {
 
               <div>
                 <div className="flex items-center justify-between">
-                  {/* text-white */}
                   <label
                     htmlFor="password"
                     className="block text-sm font-medium leading-6  text-black"
@@ -92,7 +121,9 @@ const Register = () => {
                   <input
                     id="password"
                     name="password"
+                    value={password}
                     type="password"
+                    onChange={(ev)=>{setPassword(ev.target.value)}}
                     autocomplete="current-password"
                     required
                     className="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -102,7 +133,6 @@ const Register = () => {
 
               <div>
                 <div className="flex items-center justify-between">
-                  {/* text-white */}
                   <label
                     htmlFor="password"
                     className="block text-sm font-medium leading-6  text-black"
@@ -113,7 +143,7 @@ const Register = () => {
                 <div className="mt-2">
                   <input
                     id="password"
-                    name="password"
+                    name="repassword"
                     type="password"
                     autocomplete="current-password"
                     required
@@ -124,7 +154,7 @@ const Register = () => {
 
               <div>
                 <button
-                  type="submit"
+
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign up
@@ -139,3 +169,4 @@ const Register = () => {
 };
 
 export default Register;
+

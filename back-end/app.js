@@ -32,13 +32,14 @@ app.post("/Register", async function(req, res){
       provider: 'local'}, password,
       passport.authenticate("local")(req, res, function(){
         //Redirect them to the HomePage
-        res.json(userRegisterDoc)
         console.log("Successfully Registered");
       })
     )
-
+    res.json(userRegisterDoc)
   } catch (error) {
+      console.log(error)
       res.status(422).json(error)
+      
     }
   }
 );
@@ -54,6 +55,7 @@ app.post("/Login", function(req, res){
       passport.authenticate("local")(req, res, function(){
         res.json(userLoginDoc)
         console.log("Successfully Logged in");
+
       });
     })
   } 
